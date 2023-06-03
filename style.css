@@ -1,0 +1,150 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: sans-serif;
+}
+i,svg{
+    pointer-events: none;/*when we click on the button i wana click on valume button not on the svg so when the event listner is on button it work*/
+}
+
+.kick-pad,.snare-pad,.hihat-pad{
+    width: 4rem;
+    height: 4rem;
+    margin: 1rem 0.5rem;
+    cursor: pointer;
+    border-radius: 1rem;
+}
+.kick-pad{
+    background: rgb(240, 229, 133);
+}
+.snare-pad{
+    background: rgb(138, 242, 138);
+}
+.hihat-pad{
+    background: rgb(206, 157, 231);
+}
+
+/* adding the transtion of music */
+.kick-pad.active{
+    background: rgb(239, 222, 63);
+}
+
+.snare-pad.active{
+    background: rgb(84, 234, 84);
+}
+.hihat-pad.active{
+    background: rgb(199, 102, 248);
+}
+
+.sequencer{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.kick-track,
+.snare-track,
+.hihat-track{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: space-between;
+    margin-top: 2.5rem;
+
+}
+
+.kick,
+.snare,
+.hihat{
+ display: flex; 
+}
+
+.controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    margin:0rem 2rem;
+
+}
+
+.controls button{
+    padding:0.6rem;
+    border: none;
+    background: rgb(100, 100, 100);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+#kc{
+    color: rgb(249, 226, 18) ;
+}
+#sn{
+    color: rgb(50, 238, 50) ;
+}
+#hi{
+    color:rgb(194, 96, 244);
+}
+.pads{
+    transition: all 0.5s ease;
+}
+
+.play{
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    background: rgb(83, 82, 82);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-top: 1.7rem ;
+    border-radius: 0.7rem;
+}
+select{
+    padding: 0.7rem;
+    font-size: 1rem;   
+    font-family: sans-serif;
+}
+
+.tempo{
+    margin: 1rem 3rem;
+    margin-right: 15rem;
+    width: 30%;
+}
+.tempo-slider{
+    padding: 0.2rem;
+    -webkit-appearance: none;
+    margin: 0.2rem 7rem;
+    width: 100%;
+    position: relative;
+    background: #6e6e6b;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: #fff;
+
+}
+.tempo p{
+    font-size: 1.5rem ;
+    margin: 0.1rem 15rem;
+    /* text-align: center; */
+    width: 100%;
+}
+
+
+.mute.active{
+    background: #6c6464c2;
+}
+
+@keyframes playTrack {
+   from{
+    transform: scale(1);
+   } 
+   to{
+    transform: scale(1.2);
+   }
+}
